@@ -13,6 +13,8 @@ public class RedisApplicationTests {
 	@Test
 	public void contextLoads() {
 		System.out.println("hello web");
+
+		System.out.println("试试");
 	}
 
 }
