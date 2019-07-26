@@ -13,10 +13,13 @@ import java.util.UUID;
 public class UserController {
 
     @RequestMapping("/getUser")
-    @Cacheable(value="user-key")
     public User getUser() {
-        User user=new User("aa@126.com", "aa", "aa123456", "aa","123");
-        System.out.println("若下面没出现“无缓存的时候调用”字样且能打印出数据表示测试成功");
+        User user = User.builder()
+                .id(1L)
+                .userName("steven")
+                .email("370895077@qq.com")
+                .password("123456")
+                .build();
         return user;
     }
 
@@ -30,4 +33,6 @@ public class UserController {
         session.setAttribute("uid", uid);
         return session.getId();
     }
+
+
 }
